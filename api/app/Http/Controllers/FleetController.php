@@ -9,14 +9,27 @@ use Illuminate\Support\Facades\Log;
 class FleetController extends Controller
 {
 
+    public function index()
+    {
+        $fleets = Fleet::all();
+        return response()->json($fleets);
+    }
+
+    public function indexShovel()
+    {
+        $shovelClasses = Fleet::select('category', 'class', 'equipment_no', 'operating_time')->where('category', 'Shovel Classes')->get();
+
+        return response()->json($shovelClasses);
+    }
+
     public function store(Request $request)
     {
-
+        $lastCategory=null;
         Fleet::truncate();
 
         $file = $request->file('csv_file');
         $csvData = array_map(function($line) {
-            return str_getcsv($line, ',');
+            return str_getcsv($line, ';');
         }, file($file));
 
         // Eliminar filas en blanco y encabezados no deseados
@@ -66,7 +79,6 @@ class FleetController extends Controller
             if (!array_filter($data)) {
                 continue;
             }
-
 
             Fleet::create($data);
         }

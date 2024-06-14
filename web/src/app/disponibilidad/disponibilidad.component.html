@@ -56,12 +56,23 @@
     </style>
 </head>
 <body>
-    <!-- home.component.html -->
+    
     <app-layout>
 
-      <div class="container w-100 h-25 p-0">
+      <div class="container w-100 h-25 p-0" hidden="true">
         <input type="file" class="form-control w-100 h-100">
       </div>
+
+
+
+      <div class="google-chart">
+        <google-chart [data]="pieChart"></google-chart>
+
+        <button (click)="getData()">Obtener datos</button>
+      </div>
+
+
+      
 
     </app-layout>
 

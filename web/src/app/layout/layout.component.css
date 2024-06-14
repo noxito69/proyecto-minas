@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-color: #273644;
+    background-color: #ffffff;
 }
 
 .dropdown-move-left {
@@ -28,7 +28,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #34495e;
+    background-color: #9e4745;
     height: 100px; /* Ajusta el tamaño del contenedor del logo */
     width: 100%;
     position: relative;
@@ -41,7 +41,7 @@ html {
     display: flex;
     align-items: center;
     padding: 0 20px;
-    background-color: #34495e;
+    background-color: #9e4745;
     color: white;
     box-sizing: border-box;
     position: relative;
@@ -62,7 +62,7 @@ html {
 .sidebar {
    position: relative;
     width: 250px;
-    background-color: #2c3e50;
+    background-color: #a75a59;
     color: white;
     padding: 15px;
     box-sizing: border-box;
